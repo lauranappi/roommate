@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: roommate
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coinquilini
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
