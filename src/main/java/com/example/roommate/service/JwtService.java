@@ -22,4 +22,13 @@ public class JwtService {
                 .signWith(chiave)
                 .compact();
     }
+
+    public String estraiEmail(String token) {
+        return Jwts.parser()
+                .verifyWith(chiave)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload()
+                .getSubject();
+    }
 }
