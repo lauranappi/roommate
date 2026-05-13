@@ -1,5 +1,6 @@
 package com.example.roommate.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +17,7 @@ public class Utente {
     private String nome;
     private String cognome;
 
+    @JsonIgnore
     @Column(name = "password_hash")
     private String passwordHash;
 

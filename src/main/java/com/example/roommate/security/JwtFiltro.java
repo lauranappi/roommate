@@ -45,6 +45,8 @@ public class JwtFiltro extends OncePerRequestFilter {
         }
 
         try {
+            System.out.println("TOKEN: " + chiave);
+            System.out.println("PATH: " + path);
             String token = header.substring(7);
             Jwts.parser().verifyWith(chiave).build().parseSignedClaims(token);
             filterChain.doFilter(request, response);
